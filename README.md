@@ -3,12 +3,45 @@ Shared Karma config for our apps
 
 ## Installation
 ```bash
-$ npm i --save karma-config-rentpath
+$ npm i --save-dev karma-config-rentpath
 ```
 
 ## Usage
+The most minimal usage would be to create a `karma.conf.js` file in the root of your app with the following content:
 ```javascript
+module.exports = require('karma-config-rentpath')
+```
 
+If your app has special needs, you'll want to apply the shared configuration then any custom configuration. For example:
+
+```javascript
+var configure = require('karma-config-rentpath')
+
+module.exports = function(config) {
+  // Apply shared configuration
+  configure(config)
+
+  // Custom app-specific configuration
+  config.files.push('some/extra/file')
+}
+```
+
+### Running tests
+
+Make sure your app's `package.json` has entries in `scripts` like these:
+```json
+"test": "karma start --single-run",
+"watch:test": "karma start",
+```
+Kick off either of these with `npm run` (for example: `npm run watch:test`).
+
+Note that the `test` script is a special name and can be run with these shortcuts:
+```
+# No need to say `run`:
+npm test
+
+# Or even more tersely:
+npm t
 ```
 
 ## Scripts
