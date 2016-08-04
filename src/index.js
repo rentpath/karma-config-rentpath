@@ -33,18 +33,6 @@ export default function(config) {
     ],
     files: [
       {
-        pattern: 'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
-        watched: false,
-        served: true,
-        included: true
-      },
-      {
-        pattern: 'node_modules/webpack-jasmine-flight/lib/jasmine-flight.js',
-        watched: false,
-        served: true,
-        included: true
-      },
-      {
         pattern: 'spec/javascripts/fixtures/**',
         watched: true,
         served: true,

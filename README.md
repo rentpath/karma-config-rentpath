@@ -12,6 +12,19 @@ The most minimal usage would be to create a `karma.conf.js` file in the root of 
 module.exports = require('karma-config-rentpath')
 ```
 
+And then set up an entry file to load the tests at path `/spec/javascripts/tests.bundle.js`:
+```javascript
+var context = require.context('.', true, /.+_spec\.(coffee|js|jsx)$/);
+context.keys().forEach(context);
+module.exports = context;
+```
+
+If your app requires [jasmine-jquery](https://github.com/velesin/jasmine-jquery) or [jasmine-flight](https://github.com/flightjs/jasmine-flight) you will need to import them at the top of the entry file:
+```javascript
+require('jasmine-jquery')
+require('webpack-jasmine-flight')
+```
+
 If your app has special needs, you'll want to apply the shared configuration then any custom configuration. For example:
 
 ```javascript
