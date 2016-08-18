@@ -1,4 +1,7 @@
 # karma-config-rentpath
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=plastic)](https://github.com/semantic-release/semantic-release)
+
 Shared Karma config for our apps
 
 ## Installation
@@ -66,10 +69,21 @@ npm t
 * `npm run test:watch` - Same as `npm test` but watches files for changes.
 * `npm run test:cov` - Generates a test coverage report.
 
-## Distribution
-Execute one of the following commands
-```bash
-npm version patch -m "Bumped to %s"
-npm version minor -m "Bumped to %s"
-npm version major -m "Bumped to %s"
+## Commitizen
+`karma-config-rentpath` uses [Commitizen](https://commitizen.github.io/cz-cli/) to format commit messages.
+
+* Install it globally `$ npm install -g commitizen`
+
+Once you are ready to commit, follow the familiar github workflow, with a slight change.
+
 ```
+$ git add <files>
+$ git cz
+```
+
+`$ git cz` will bring up the Commitizen commit prompt, follow the instructions, and `$ git push` as usual.
+
+`Commitizen` formatted commit messages are used with [Semantic-Release](https://github.com/semantic-release/semantic-release) to push new versions to `NPM`. RentPath's NPM packages can be found [here](https://www.npmjs.com/~rentpath).
+
+See the [commitizen-cli docs](https://github.com/commitizen/cz-cli) for information regarding `commit` message format.
+
